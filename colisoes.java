@@ -8,10 +8,7 @@ import java.awt.event.MouseMotionListener;
 import javax.swing.*;
 
 //import java.awt.image.BufferedImage;
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 /*
  * TelaJFrame.java
@@ -94,12 +91,12 @@ public class colisoes extends Applet {
         jLabel4.setText("Vx2");
         jLabel5.setText("amortecimento");
         jLabel6.setText("Dorme");
-        jLabel7.setText("chão");
+        jLabel7.setText("chÃ£o");
         jLabel8.setText("teto");
         jLabel9.setText("direita");
         jLabel10.setText("esquerda");
         jLabel11.setText("passos");
-        jLabel12.setText("Muitas combinações podem gerar erro de calculo, colapsando o movimento -- dai é só mudar um ou outro parâmetro");
+        jLabel12.setText("Muitas combinaÃ§Ãµes podem gerar erro de calculo, colapsando o movimento -- dai Ã© sÃ³ mudar um ou outro parÃ¢metro");
         jLabel13.setText("Vy1");
         jLabel14.setText("Vy2");
         jCheckBox1.setText("Mostrar bola 1");
@@ -271,17 +268,17 @@ public class colisoes extends Applet {
     		        Graphics graphics = jLabel1.getGraphics();
     		        
     		          /** depois tem que testar para ver os melhores
-    		           * limites de cada variável.
+    		           * limites de cada variÃ¡vel.
     		           *   
     		           */
     		         // int quemvai = 3;      // bolas 1 ou 2, 3=ambas
     		          int colorido=1;       // bola1: (0 preto/ 1 color) 
     		          int raio = 5;         // largura da bolinha 
     		          
-    		          int dorme = 10;       // tempo delay (0- até 200) 
-    		          int passos=500;       // num. bolinhas (for..next) até 1000
+    		          int dorme = 10;       // tempo delay (0- atÃ© 200) 
+    		          int passos=500;       // num. bolinhas (for..next) atÃ© 1000
     		          
-    		          double amortec=0.9;   // (0.1-1.0) coeficiente de amortecimento na colisão com o chão
+    		          double amortec=0.9;   // (0.1-1.0) coeficiente de amortecimento na colisÃ£o com o chÃ£o
     		          double amortec2=1-((1-amortec)/2);
     		          
     		          int a = 1;
@@ -289,8 +286,8 @@ public class colisoes extends Applet {
     		          int chao = 500;       // posicao do chao na tela
     		          int teto = 150;        // posicao do teto 
     		          int parede = 800;    // parede direita
-    		          int inicial1 = 0;     // inicial é a parede direita
-    		          int inicial2 = 0;     // só pode ter na 2a. volta
+    		          int inicial1 = 0;     // inicial Ã© a parede direita
+    		          int inicial2 = 0;     // sÃ³ pode ter na 2a. volta
     		          // se passos*dorme>valor_x  fica muito demorado  
     		          int y1 = 200;  int x1 = 10;   
     		          int vx1 = 20;  int vy1 = -12;
@@ -316,8 +313,8 @@ public class colisoes extends Applet {
     		          inicial1=((Number)jSpinner12.getValue()).intValue();
     		          inicial2=((Number)jSpinner12.getValue()).intValue();
     		          
-    		          amortec2=1-((1-amortec)/2);  //este é o calculo certo
-    		          amortec2=1;                  // este está anulando temporariamente o amortec na componente secundaria
+    		          amortec2=1-((1-amortec)/2);  //este Ã© o calculo certo
+    		          amortec2=1;                  // este estÃ¡ anulando temporariamente o amortec na componente secundaria
     		          
     		          System.out.println(dorme);
     		          System.out.println(passos);
@@ -334,7 +331,7 @@ public class colisoes extends Applet {
     		          System.out.println(inicial1);
     		          int margem=0;
     		          
-        	          // cenário (teto, prédio e chão e parede lateral)
+        	          // cenÃ¡rio (teto, prÃ©dio e chÃ£o e parede lateral)
     		          graphics.drawLine(0, teto-margem, parede+margem, teto-margem);
     		          graphics.drawRect(x1, y1+5, 20, chao-y1+5);
     		          graphics.drawLine(20, chao+margem, y1+parede, chao+margem);
@@ -357,13 +354,13 @@ public class colisoes extends Applet {
     		 			   x2 = x2 + vx2;
     		 			   
   		 		
-    		 		      // evitar que dê erro e passe do chão
+    		 		      // evitar que dÃª erro e passe do chÃ£o
     		             if (y1>chao+margem) y1=chao;
     		             if (y2>chao+margem) y2=chao;
     		             
-    		             // isto aqui é uma besteira
+    		             // isto aqui Ã© uma besteira
     		             // apenas coloca cores nos multiplos de 9,8,...,2
-    		             // o que nao é multiplo fica preto
+    		             // o que nao Ã© multiplo fica preto
     		             // tem que ficar ordem inversa pois coloquei else if 
     		             // se botar ordem normal nunca pega multiplos tipo 4,6,8,9
     		             if (colorido == 1) {               
@@ -380,7 +377,7 @@ public class colisoes extends Applet {
     		          }
     		          
     		             if (jCheckBox1.isSelected()) {
-    		            	 graphics.setColor(Color.BLUE);  //ISTO ESTÁ ANULANDO A PARTE ACIMA (COLORIDO)
+    		            	 graphics.setColor(Color.BLUE);  //ISTO ESTÃ ANULANDO A PARTE ACIMA (COLORIDO)
     	    		          graphics.fillOval(x1 ,y1, raio, raio);
     	    		        //  graphics.setColor(Color.gray);
     	    		      	//  graphics.fillOval(antx1 ,anty1, raio, raio);
@@ -400,7 +397,7 @@ public class colisoes extends Applet {
     		      //    if (x2>50) {
     		      //    	inicial2=30;
     		      //    }
-    		 			// caso toque no chão    
+    		 			// caso toque no chÃ£o    
     		 			if (y1 >= chao)  vy1 = -(int)(vy1*amortec);
     		 			if (y2 >= chao)  vy2 = -(int)(vy2*amortec);
     		 			// caso toque no teto     
@@ -413,7 +410,7 @@ public class colisoes extends Applet {
     		 			if (x1 <= inicial1)   vx1 = -(int)(vx1*amortec);
     		 			if (x2 <= inicial2)  vx2 = -(int)(vx2*amortec);
     		 			
-     		 		    // amortecer compenente x tambem caso toque no chão
+     		 		    // amortecer compenente x tambem caso toque no chÃ£o
     		 			if (y1 >= chao)   vx1 = (int)(vx1*amortec2);
     		 			if (y2 >= chao)  vx2 = (int)(vx2*amortec2);
         		 		// amortecer compenente x tambem caso toque no teto
